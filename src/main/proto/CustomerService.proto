@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc.customer";
+
+package com.example.grpc.customer;
+
+message CustomerType {
+  string customerId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string middleName = 4;
+  string phoneNo = 5;
+  string emailAddr = 6;
+}
+
+message CustomerGetRequest {
+    string customerId = 1;
+}
+
+message CustomerGetResponse {
+    CustomerType customer = 1;
+}
+
+message CustomerCreateRequest {
+    CustomerType customer = 1;
+}
+
+message CustomerCreateResponse {
+    string statusCode = 1;
+	string statusMessage = 2;
+}
+
+service CustomerService {
+    rpc get(CustomerGetRequest) returns (stream CustomerGetResponse);
+    rpc create(CustomerCreateRequest) returns (CustomerCreateResponse);
+}
