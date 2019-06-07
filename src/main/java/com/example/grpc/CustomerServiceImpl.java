@@ -87,7 +87,4 @@ public class CustomerServiceImpl extends CustomerServiceImplBase{
 			responseObserver.onError(StatusProto.toStatusException(status));
 		}
 	}
-	
-	
-
 }

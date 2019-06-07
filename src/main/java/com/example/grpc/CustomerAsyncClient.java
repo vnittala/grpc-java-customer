@@ -23,7 +23,6 @@ public class CustomerAsyncClient {
 			@Override
 			public void onNext(CustomerGetResponse value) {
 				System.out.println("onNext: " + value);
-
 			}
 
 			@Override
@@ -36,10 +35,7 @@ public class CustomerAsyncClient {
 			public void onCompleted() {
 				System.out.println("onCompleted");
 				channel.shutdown();
-
 			}
 		});
-
 	}
-
 }
