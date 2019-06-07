@@ -36,7 +36,7 @@ public class CustomerServiceImpl extends CustomerServiceImplBase{
 													.build();
 			
 			// Log customer record
-			logger.atInfo().log("Customer Record", customer);
+			logger.atInfo().log("Customer Record", customer.toString());
 			
 			// Attached customer record to CustomerGetResponse
 			CustomerGetResponse response = CustomerGetResponse.newBuilder().setCustomer(customer).build();
